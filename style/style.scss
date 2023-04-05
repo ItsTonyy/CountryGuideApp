@@ -36,6 +36,12 @@ main {
   padding: 1rem;
   border: none;
   border-bottom: 2px solid #3d64e6;
+
+
+  &:focus {
+    outline: none;
+    border-bottom: 3px solid #3d64e6;
+  }
 }
 
 .search-button {
