@@ -51,4 +51,13 @@ main {
   border-radius: 35px;
   margin-left: 2rem;
   cursor: pointer;
+}
+
+.data-box {
+  border: 2px solid red;
+}
+
+.flag-img {
+  width: 140%;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
