@@ -20,9 +20,9 @@ main {
 }
 
 .main-box {
+  flex-direction: column;
   background-color: white;
   width: 30%;
-  height: 15rem;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -30,18 +30,22 @@ main {
   box-shadow: 11px 11px 20px #26449f;
 }
 
-.input-text {
+.search-wrapper {
+  margin: 3rem;
+}
+.search-wrapper .input-text {
   width: 35rem;
   padding: 1rem;
   border: none;
   border-bottom: 2px solid #3d64e6;
+  font-size: 2rem;
+  font-weight: 400;
 }
-.input-text:focus {
+.search-wrapper .input-text:focus {
   outline: none;
   border-bottom: 3px solid #3d64e6;
 }
-
-.search-button {
+.search-wrapper .search-button {
   background-color: #3967ed;
   color: white;
   border: none;
@@ -54,10 +58,30 @@ main {
 }
 
 .data-box {
-  border: 2px solid red;
+  margin: 1rem auto 4rem auto;
+}
+.data-box h2 {
+  text-align: center;
+  margin: 0.5rem 0rem;
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+}
+.data-box .data-wrapper {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+.data-box .data-wrapper span {
+  font-weight: bold;
+}
+.data-box .data-wrapper h4 {
+  display: inline;
+  font-weight: 400;
+}
+.data-box .data-wrapper .wrapper {
+  margin-bottom: 0.5rem;
 }
 
 .flag-img {
-  width: 140%;
+  width: 100%;
   border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

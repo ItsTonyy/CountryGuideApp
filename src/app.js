@@ -7,7 +7,7 @@ const handleError = (error) => {
 };
 
 myBtn.addEventListener('click', () => {
-  let countryName = 'Brazil'; // TODO associar essa variável ao input
+  let countryName = textInput.value // 
   let finalUrl = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
   fetch(finalUrl)
     .then((response) => response.json())
@@ -27,15 +27,38 @@ myBtn.addEventListener('click', () => {
       result.innerHTML = `
 
       <div class = 'data-box'>
-      <img src="${data[0].flags.png}" alt="imagem" class = 'flag-img'>
-      <h2 class = 'country-name' >${data[0].name.common}</h2>
-
-      <p>Capital: ${data[0].capital[0]} </p>
-      <p>Continent: ${data[0].continents[0]} </p>
-      <p>Population: ${data[0].population} </p>
-      <p>Currency: ${Object.keys(data[0].currencies)[0] + data[0].currencies[Object.keys(data[0].currencies)].name} </p>
-      <p>Common Languages: ${Object.values(data[0].languages).toString().split(',').join(', ')} </p>
+        <h2 class = 'country-name' >${data[0].name.common}</h2>
+        <img src="${data[0].flags.png}" alt="imagem" class = 'flag-img'>
       
+        <div class = 'data-wrapper'> 
+
+        <div class = 'wrapper'        
+          <h4>Capital:</h4> 
+          <span> ${data[0].capital[0]} </span>
+        </div>
+
+        <div class = 'wrapper'      
+          <h4>Continent: </h4>
+          <span> ${data[0].continents[0]} </span>
+        </div>
+
+        <div class = 'wrapper'
+          <h4>Population: </h4>
+          <span> ${data[0].population} </span>
+        </div>
+
+        <div class = 'wrapper'
+          <h4>Currency: </h4>
+          <span>  ${Object.keys(data[0].currencies)[0] + ' - ' +data[0].currencies[Object.keys(data[0].currencies)].name} </span>
+        </div>
+
+        <div class = 'wrapper'
+          <h4>Common Languages:</h4>
+          <span> ${Object.values(data[0].languages).toString().split(',').join(', ')}  </span> 
+        </div>     
+
+      </div>
+
       </div>
       `;
     })
