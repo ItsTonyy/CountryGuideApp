@@ -7,7 +7,7 @@ const handleError = (error) => {
 };
 
 myBtn.addEventListener('click', () => {
-  let countryName = textInput.value // 
+  let countryName = textInput.value 
   let finalUrl = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
   fetch(finalUrl)
     .then((response) => response.json())
@@ -62,11 +62,15 @@ myBtn.addEventListener('click', () => {
       </div>
       `;
     })
-    .catch((error) => {
-      console.log('deu erro paizão', error);
+    .catch(() => {
+      if (textInput.value == 0) {
+        result.innerHTML = '<h3> The input field cannot be empty </h3>';
+        textInput.style.borderBottom = '2px solid #ff465a';
+      } else {
+        result.innerHTML = '<h3>Please, enter a valid coutry name </h3>'
+      }
     });
-
-    
+   
 });
 
 // png: imagem
@@ -75,3 +79,7 @@ myBtn.addEventListener('click', () => {
 // currencies : moeda local (ele passa a sigla e só depois o nome da moeda)
 // languages : lingua
 // continents : continente
+
+// to do: - consertar bugs da flag gigante em alguns países
+// - responsividade (usando media querie)
+// - hostear o projeto com vercel
